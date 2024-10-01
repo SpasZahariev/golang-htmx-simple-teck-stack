@@ -1,0 +1,34 @@
+# Binaries
+/bin/
+/out/
+/*.exe
+/*.dll
+/*.so
+/*.dylib
+
+# Build directories
+/build/
+
+/vendor/
+
+# OS-specific and IDE files
+.DS_Store
+Thumbs.db
+.idea/
+*.swp
+*.swo
+
+# Go specific
+*.test
+*.prof
+*.cover
+
+# Go module cache
+go.sum
+
+# Go build output
+*.o
+*.a
+
+# Logs
+*.log
