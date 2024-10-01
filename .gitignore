@@ -8,6 +8,7 @@
 
 # Build directories
 /build/
+/static/
 
 /vendor/
 
@@ -32,3 +33,7 @@ go.sum
 
 # Logs
 *.log
+
+# npm stuff
+/node_modules/
+package-lock.json

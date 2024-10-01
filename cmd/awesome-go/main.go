@@ -16,6 +16,8 @@ func main() {
 
 	e := gin.Default()
 
+	e.Static("/static", "./static")
+
 	e.LoadHTMLGlob("templates/*")
 
 	e.POST("/todos", func(c *gin.Context) {
