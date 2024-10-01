@@ -5,10 +5,11 @@
 /*.dll
 /*.so
 /*.dylib
+main
 
 # Build directories
 /build/
-/static/
+# /static/
 
 /vendor/
 
