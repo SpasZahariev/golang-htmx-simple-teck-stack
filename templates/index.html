@@ -10,9 +10,15 @@
     <h1>Tasks</h1>
     <ul id="tasks">
       {{range .todos}}
-      <li>
+      <li id="task-{{.Id}}">
         {{.Title}} - {{.Status}}
-        <button hx-delete="/todos/{{.Id}}">Delete</button>
+        <button
+          hx-delete="/todos/{{.Id}}"
+          hx-target="#task-{{.Id}}"
+          hx-swap="delete"
+        >
+          Delete
+        </button>
       </li>
       {{else}}
       <li>No tasks found</li>

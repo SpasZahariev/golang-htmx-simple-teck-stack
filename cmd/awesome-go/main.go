@@ -3,6 +3,7 @@
 package main
 
 import (
+	"log"
 	"net/http"
 	"strconv"
 
@@ -20,18 +21,25 @@ func main() {
 	e.POST("/todos", func(c *gin.Context) {
 		title := c.PostForm("title")
 		status := c.PostForm("status")
-		id, _ := CreateToDo(title, status)
+		id, err := CreateToDo(title, status)
+		if err != nil {
+			log.Fatal(err)
+		}
 		c.HTML(http.StatusOK, "task.html", gin.H{
-			"title":  title,
-			"status": status,
-			"id":     id,
+			"Title":  title,
+			"Status": status,
+			"Id":     id,
 		})
 	})
 
 	e.DELETE("/todos/:id", func(c *gin.Context) {
 		param := c.Param("id")
-		id, _ := strconv.ParseInt(param, 10, 64)
+		id, err := strconv.ParseInt(param, 10, 64)
+		if err != nil {
+			log.Fatal(err)
+		}
 		DeleteToDo(id)
+		c.Status(http.StatusOK) //Respond with a 200 OK status and no content
 		// Handle response, e.g., return a success message
 	})
 

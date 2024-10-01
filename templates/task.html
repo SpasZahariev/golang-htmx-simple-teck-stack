@@ -1,7 +1,6 @@
-<!-- <!doctype html> -->
-<!-- <html> -->
-<li>
-  {{.title}} - {{.status}}
-  <button hx-delete="/todos/{{.id}}">Delete</button>
+<li id="task-{{.Id}}">
+  {{.Title}} - {{.Status}}
+  <button hx-delete="/todos/{{.Id}}" hx-target="#task-{{.Id}}" hx-swap="delete">
+    Delete
+  </button>
 </li>
-<!-- </html> -->
