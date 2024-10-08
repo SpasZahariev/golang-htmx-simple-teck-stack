@@ -10,6 +10,9 @@ main
 # Build directories
 /build/
 # /static/
+/terraform/.terraform/
+/terraform/.terraform*
+/terraform/terraform.tfstate*
 
 /vendor/
 
